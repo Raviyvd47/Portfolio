@@ -3,199 +3,348 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ravi Yadav | Cybersecurity & Technical Support</title>
-  <!-- Tailwind CSS CDN -->
+  <title>Ravi Yadav | Cybersecurity & Technical Operations</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #030712;
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(56, 189, 248, 0.12);
+    }
+    .glass-card:hover {
+      border-color: rgba(34, 211, 238, 0.45);
+      box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+    }
+    /* Infinite Horizontal Marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 22s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    /* Pulse Glow */
+    .glow-sphere {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-black">
+<body class="text-slate-100 bg-grid relative overflow-x-hidden selection:bg-cyan-500 selection:text-black">
+
+  <!-- Ambient Light Gradients -->
+  <div class="glow-sphere bg-cyan-500 top-10 left-[-80px]"></div>
+  <div class="glow-sphere bg-blue-600 top-[600px] right-[-100px]"></div>
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-slate-900/90 backdrop-blur-md border-b border-slate-800 z-50">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#hero" class="text-xl font-bold tracking-tight text-cyan-400">RAVI<span class="text-white">.</span></a>
-      <div class="space-x-5 text-sm font-medium text-slate-300">
+  <nav class="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/80 z-50 transition-all">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#hero" class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1">
+        <span class="text-cyan-400 font-mono-code">&lt;</span>RAVI<span class="text-cyan-400 font-mono-code">/&gt;</span>
+      </a>
+      <div class="space-x-6 text-sm font-medium text-slate-300 hidden sm:block">
         <a href="#about" class="hover:text-cyan-400 transition">About</a>
-        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
-        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-cyan-400 transition">Work</a>
+        <a href="#skills" class="hover:text-cyan-400 transition">Toolkit</a>
         <a href="#education" class="hover:text-cyan-400 transition">Education</a>
         <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
       </div>
+      <a href="#contact" class="sm:hidden text-xs bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 px-3 py-1.5 rounded-full">Contact</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" class="min-h-screen flex items-center pt-24 px-6 max-w-5xl mx-auto">
-    <div>
-      <span class="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-cyan-950/80 border border-cyan-800/60 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-5">
-        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Open for Roles (Fresher)
-      </span>
-      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
-        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Ravi Yadav</span>
-      </h1>
-      <p class="text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed mb-8">
-        BCA Graduate in Cyber Security & Forensics with strong fundamentals in Networking, OS Troubleshooting, Log Monitoring, and Python Automation.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#projects" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-6 py-3 rounded-lg transition duration-200">
-          View Projects
-        </a>
-        <a href="#contact" class="border border-slate-700 hover:border-slate-500 px-6 py-3 rounded-lg transition text-slate-300">
-          Get in Touch
-        </a>
+  <section id="hero" class="min-h-screen flex items-center pt-24 pb-12 px-6 max-w-6xl mx-auto relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
+      
+      <div class="lg:col-span-7" data-aos="fade-up" data-aos-duration="1000">
+        <div class="inline-flex items-center gap-2.5 py-1.5 px-4 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-semibold tracking-wide mb-6">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+          OPEN FOR OPPORTUNITIES (FRESHER)[span_1](start_span)[span_1](end_span)
+        </div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+          Architecting <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500">
+            Security & Defense
+          </span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed mb-8">
+          BCA Graduate in Cyber Security & Forensics[span_2](start_span)[span_2](end_span). Specialized in network infrastructure diagnostics, threat log analysis, and automated Python monitoring tools[span_3](start_span)[span_3](end_span).
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#projects" class="bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold px-7 py-3.5 rounded-xl transition duration-300 flex items-center gap-2 shadow-lg shadow-cyan-500/20">
+            <span>Explore Projects</span>
+            <i class="fa-solid fa-arrow-down text-sm"></i>
+          </a>
+          <a href="https://github.com/Raviyvd47" target="_blank" class="glass-card hover:bg-slate-800/80 px-6 py-3.5 rounded-xl transition duration-300 text-slate-300 flex items-center gap-2">
+            <i class="fa-brands fa-github text-lg"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
       </div>
+
+      <!-- Live Terminal Widget -->
+      <div class="lg:col-span-5" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 shadow-2xl">
+          <div class="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+            <div class="flex gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+            </div>
+            <span class="font-mono-code text-xs text-slate-400">soc_monitor.py</span>
+          </div>
+          <div class="p-5 font-mono-code text-xs sm:text-sm text-slate-300 space-y-3 leading-relaxed">
+            <p class="text-slate-500"># System Diagnostics & SOC Agent</p>
+            <p><span class="text-cyan-400">➜</span> <span class="text-blue-400">status:</span> Initializing Log Watcher...</p>
+            <p><span class="text-cyan-400">➜</span> <span class="text-blue-400">interface:</span> TCP/IP & VPN Monitor active[span_4](start_span)[span_4](end_span)</p>
+            <p><span class="text-cyan-400">➜</span> <span class="text-blue-400">threat_level:</span> <span class="text-emerald-400">NORMAL (0 Anomalies)</span></p>
+            <div class="p-2.5 rounded bg-slate-950/80 border border-slate-800/90 text-xs text-cyan-300">
+              [ALERT] Automated SOC Bot running on SQLite/Flask[span_5](start_span)[span_5](end_span)
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <!-- Infinite Running Marquee -->
+  <div class="py-6 border-y border-slate-800/80 bg-slate-950/60 overflow-hidden relative">
+    <div class="animate-marquee whitespace-nowrap flex gap-10 items-center text-xs sm:text-sm font-mono-code text-slate-400 uppercase tracking-widest">
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>Python Automation[span_6](start_span)[span_6](end_span)</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>Threat Detection</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>TCP/IP & VPN Diagnostics[span_7](start_span)[span_7](end_span)</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>Windows & Linux Troubleshooting[span_8](start_span)[span_8](end_span)</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>SOC Log Analysis[span_9](start_span)[span_9](end_span)</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>Flask & SQLite</span>
+      <!-- Repeated for smooth infinite loop -->
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>Python Automation[span_10](start_span)[span_10](end_span)</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>Threat Detection</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>TCP/IP & VPN Diagnostics[span_11](start_span)[span_11](end_span)</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>Windows & Linux Troubleshooting[span_12](start_span)[span_12](end_span)</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>SOC Log Analysis[span_13](start_span)[span_13](end_span)</span>
+      <span><i class="fa-solid fa-asterisk text-cyan-400 mr-3"></i>Flask & SQLite</span>
+    </div>
+  </div>
+
   <!-- About Section -->
-  <section id="about" class="py-20 px-6 max-w-5xl mx-auto border-t border-slate-800">
-    <h2 class="text-2xl font-bold mb-4 text-cyan-400">Profile Overview</h2>
-    <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 sm:p-8">
-      <p class="text-slate-300 leading-relaxed text-base sm:text-lg mb-4">
-        A motivated BCA (Cyber Security & Forensics) graduate with hands-on practice in Networking (TCP/IP, LAN/WAN, VPN), OS & Hardware Troubleshooting (Windows & Linux), and basic security operations.
-      </p>
-      <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
-        Adept at system diagnostics, log monitoring, and Python automation. Seeking an entry-level Technical Support Engineer or Security Analyst role to contribute to IT infrastructure stability and client support.
-      </p>
+  <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+    <div class="glass-card rounded-2xl p-8 sm:p-12 relative overflow-hidden" data-aos="fade-up">
+      <div class="max-w-2xl">
+        <span class="text-xs font-mono-code text-cyan-400 uppercase tracking-widest">01 // Background</span>
+        <h2 class="text-3xl font-extrabold text-white mt-2 mb-6">Profile Overview</h2>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-6">
+          A motivated BCA (Cyber Security & Forensics) graduate with hands-on practice in Networking (TCP/IP, LAN/WAN, VPN), OS & Hardware Troubleshooting (Windows & Linux), and basic security operations[span_14](start_span)[span_14](end_span).
+        </p>
+        <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+          Adept at system diagnostics, log monitoring, and Python automation[span_15](start_span)[span_15](end_span). Seeking an entry-level Technical Support Engineer or Security Analyst role to contribute to IT infrastructure stability and client support[span_16](start_span)[span_16](end_span).
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-20 px-6 max-w-5xl mx-auto border-t border-slate-800">
-    <div class="flex items-center justify-between mb-8">
+  <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
       <div>
-        <h2 class="text-2xl font-bold text-white">Projects & Hands-on</h2>
-        <p class="text-slate-400 text-sm mt-1">Practical implementations and lab work</p>
+        <span class="text-xs font-mono-code text-cyan-400 uppercase tracking-widest">02 // Selected Works</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Featured Projects</h2>
       </div>
-      <a href="https://github.com/Raviyvd47" target="_blank" class="text-sm text-cyan-400 hover:underline flex items-center gap-1">
-        GitHub Profile <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+      <a href="https://github.com/Raviyvd47" target="_blank" class="text-sm text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+        <span>View all on GitHub</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
       </a>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       
       <!-- Project 1 -->
-      <div class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-xl p-6 transition duration-300 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
         <div>
-          <div class="flex justify-between items-start mb-3">
-            <h3 class="text-xl font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-shield-halved text-cyan-400"></i> SOC Log Analyzer & Bot
-            </h3>
-            <span class="text-xs bg-slate-800 text-cyan-300 px-2.5 py-1 rounded">Academic Project</span>
+          <div class="flex justify-between items-center mb-6">
+            <span class="p-3 rounded-xl bg-cyan-950/80 text-cyan-400 border border-cyan-800/60 text-xl group-hover:scale-110 transition duration-300">
+              <i class="fa-solid fa-shield-halved"></i>
+            </span>
+            <span class="font-mono-code text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-300">ACADEMIC[span_17](start_span)[span_17](end_span)</span>
           </div>
-          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-            Built a Python prototype to parse system logs and detect basic threats. Designed a responsive web interface using HTML/CSS to display real-time security alerts and built automation logic to filter critical logs.
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition">SOC Log Analyzer & Bot[span_18](start_span)[span_18](end_span)</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Engineered a Python prototype to scan system logs and alert on brute-force attempts and anomalies[span_19](start_span)[span_19](end_span). Features an interactive web-based alert dashboard and automatic severity reporting logic[span_20](start_span)[span_20](end_span).
           </p>
         </div>
-        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800 text-xs font-mono text-cyan-300">
-          <span class="bg-slate-800 px-2.5 py-1 rounded">Python</span>
-          <span class="bg-slate-800 px-2.5 py-1 rounded">HTML/CSS</span>
-          <span class="bg-slate-800 px-2.5 py-1 rounded">Log Parsing</span>
-          <span class="bg-slate-800 px-2.5 py-1 rounded">SOC Alerts</span>
+        <div class="flex flex-wrap gap-2 pt-6 border-t border-slate-800 font-mono-code text-xs text-cyan-300">
+          <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">Python[span_21](start_span)[span_21](end_span)</span>
+          <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">Flask</span>
+          <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">Log Parsing[span_22](start_span)[span_22](end_span)</span>
+          <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">HTML/CSS[span_23](start_span)[span_23](end_span)</span>
         </div>
       </div>
 
       <!-- Project 2 -->
-      <div class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-xl p-6 transition duration-300 flex flex-col justify-between">
+      <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
         <div>
-          <div class="flex justify-between items-start mb-3">
-            <h3 class="text-xl font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-network-wired text-cyan-400"></i> Network & System Diagnostics
-            </h3>
-            <span class="text-xs bg-slate-800 text-cyan-300 px-2.5 py-1 rounded">Hands-on</span>
+          <div class="flex justify-between items-center mb-6">
+            <span class="p-3 rounded-xl bg-cyan-950/80 text-cyan-400 border border-cyan-800/60 text-xl group-hover:scale-110 transition duration-300">
+              <i class="fa-solid fa-network-wired"></i>
+            </span>
+            <span class="font-mono-code text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-300">LAB HANDS-ON[span_24](start_span)[span_24](end_span)</span>
           </div>
-          <p class="text-slate-400 text-sm mb-4 leading-relaxed">
-            Performed OS troubleshooting across Windows and Linux environments. Configured LAN, VPN, and DNS settings, analyzed network packet flows, and automated routine file operations using Python utility scripts.
+          <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition">Network Diagnostics & Scripts[span_25](start_span)[span_25](end_span)</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Hands-on configuration of LAN, VPN, and DNS parameters across mixed Windows/Linux environments[span_26](start_span)[span_26](end_span). Includes Python-based utilities for system diagnostics and automated file transfers[span_27](start_span)[span_27](end_span).
           </p>
         </div>
-        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800 text-xs font-mono text-cyan-300">
-          <span class="bg-slate-800 px-2.5 py-1 rounded">Windows & Linux</span>
-          <span class="bg-slate-800 px-2.5 py-1 rounded">LAN/WAN & VPN</span>
-          <span class="bg-slate-800 px-2.5 py-1 rounded">DNS & TCP/IP</span>
-          <span class="bg-slate-800 px-2.5 py-1 rounded">Python Scripting</span>
+        <div class="flex flex-wrap gap-2 pt-6 border-t border-slate-800 font-mono-code text-xs text-cyan-300">
+          <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">TCP/IP[span_28](start_span)[span_28](end_span)</span>
+          <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">VPN / LAN[span_29](start_span)[span_29](end_span)</span>
+          <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">Linux & Windows[span_30](start_span)[span_30](end_span)</span>
+          <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-lg">Bash/Python[span_31](start_span)[span_31](end_span)</span>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="py-20 px-6 max-w-5xl mx-auto border-t border-slate-800">
-    <h2 class="text-2xl font-bold mb-8">Technical Skills</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
-        <p class="text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-2">Networking</p>
-        <p class="text-slate-200 text-sm">TCP/IP, LAN/WAN, VPN, DNS, Wi-Fi Diagnostics</p>
+  <!-- Technical Skills Grid -->
+  <section id="skills" class="py-20 px-6 max-w-6xl mx-auto">
+    <span class="text-xs font-mono-code text-cyan-400 uppercase tracking-widest">03 // Competencies</span>
+    <h2 class="text-3xl font-extrabold text-white mt-1 mb-10">Technical Toolkit</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="50">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fa-solid fa-globe text-cyan-400 text-lg"></i>
+          <h4 class="font-bold text-white">Networking</h4>
+        </div>
+        <p class="text-slate-400 text-sm">TCP/IP, LAN/WAN, VPN, DNS, Wi-Fi Diagnostics[span_32](start_span)[span_32](end_span)</p>
       </div>
-      <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
-        <p class="text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-2">Operating Systems</p>
-        <p class="text-slate-200 text-sm">Windows & Linux Troubleshooting, System Diagnostics</p>
+
+      <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fa-brands fa-linux text-cyan-400 text-lg"></i>
+          <h4 class="font-bold text-white">Operating Systems</h4>
+        </div>
+        <p class="text-slate-400 text-sm">Windows & Linux Troubleshooting, Diagnostics[span_33](start_span)[span_33](end_span)</p>
       </div>
-      <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
-        <p class="text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-2">Development & Web</p>
-        <p class="text-slate-200 text-sm">Python Scripting, HTML, CSS</p>
+
+      <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="150">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fa-brands fa-python text-cyan-400 text-lg"></i>
+          <h4 class="font-bold text-white">Development</h4>
+        </div>
+        <p class="text-slate-400 text-sm">Python Scripting, HTML5, CSS3[span_34](start_span)[span_34](end_span)</p>
       </div>
-      <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
-        <p class="text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-2">Security Operations</p>
-        <p class="text-slate-200 text-sm">SOC Basics, Log Analysis, Security Monitoring</p>
+
+      <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fa-solid fa-user-shield text-cyan-400 text-lg"></i>
+          <h4 class="font-bold text-white">Security Operations</h4>
+        </div>
+        <p class="text-slate-400 text-sm">Log Analysis, SOC Foundations, Anomaly Detection[span_35](start_span)[span_35](end_span)</p>
       </div>
-      <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
-        <p class="text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-2">Administration</p>
-        <p class="text-slate-200 text-sm">Hardware Support, System Administration Basics</p>
+
+      <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="250">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fa-solid fa-server text-cyan-400 text-lg"></i>
+          <h4 class="font-bold text-white">IT Administration</h4>
+        </div>
+        <p class="text-slate-400 text-sm">Hardware Diagnostics, System Maintenance[span_36](start_span)[span_36](end_span)</p>
       </div>
-      <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl">
-        <p class="text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-2">Core Strengths</p>
-        <p class="text-slate-200 text-sm">Problem Solving, IT Infrastructure Support</p>
+
+      <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="fa-solid fa-toolbox text-cyan-400 text-lg"></i>
+          <h4 class="font-bold text-white">Workflow & Tools</h4>
+        </div>
+        <p class="text-slate-400 text-sm">Git, GitHub, VS Code, Incident Troubleshooting</p>
       </div>
     </div>
   </section>
 
   <!-- Education Section -->
-  <section id="education" class="py-20 px-6 max-w-5xl mx-auto border-t border-slate-800">
-    <h2 class="text-2xl font-bold mb-8">Education</h2>
+  <section id="education" class="py-20 px-6 max-w-6xl mx-auto">
+    <span class="text-xs font-mono-code text-cyan-400 uppercase tracking-widest">04 // Academics</span>
+    <h2 class="text-3xl font-extrabold text-white mt-1 mb-8">Education History</h2>
+
     <div class="space-y-4">
-      <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl flex flex-col sm:flex-row justify-between sm:items-center">
+      <div class="glass-card p-6 rounded-2xl flex flex-col sm:flex-row justify-between sm:items-center gap-2" data-aos="fade-up">
         <div>
-          <h3 class="font-bold text-white text-base">Bachelor of Computer Applications (BCA)</h3>
-          <p class="text-cyan-400 text-sm">Specialization in Cyber Security & Forensics</p>
+          <h3 class="font-bold text-white text-lg">Bachelor of Computer Applications (BCA)[span_37](start_span)[span_37](end_span)</h3>
+          <p class="text-cyan-400 text-sm">Cyber Security & Forensics[span_38](start_span)[span_38](end_span)</p>
         </div>
-        <span class="text-slate-400 text-sm mt-2 sm:mt-0 font-mono">2023 – 2026</span>
+        <span class="font-mono-code text-xs px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 w-fit">2023 – 2026[span_39](start_span)[span_39](end_span)</span>
       </div>
-      <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl flex flex-col sm:flex-row justify-between sm:items-center">
+      <div class="glass-card p-6 rounded-2xl flex flex-col sm:flex-row justify-between sm:items-center gap-2" data-aos="fade-up">
         <div>
-          <h3 class="font-bold text-white text-base">Intermediate (12th)</h3>
-          <p class="text-slate-400 text-sm">UP Board</p>
+          <h3 class="font-bold text-white text-lg">Intermediate (12th)[span_40](start_span)[span_40](end_span)</h3>
+          <p class="text-slate-400 text-sm">UP Board[span_41](start_span)[span_41](end_span)</p>
         </div>
-        <span class="text-slate-400 text-sm mt-2 sm:mt-0 font-mono">2023</span>
+        <span class="font-mono-code text-xs px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 w-fit">2023[span_42](start_span)[span_42](end_span)</span>
       </div>
-      <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl flex flex-col sm:flex-row justify-between sm:items-center">
+      <div class="glass-card p-6 rounded-2xl flex flex-col sm:flex-row justify-between sm:items-center gap-2" data-aos="fade-up">
         <div>
-          <h3 class="font-bold text-white text-base">High School (10th)</h3>
-          <p class="text-slate-400 text-sm">CBSE Board</p>
+          <h3 class="font-bold text-white text-lg">High School (10th)[span_43](start_span)[span_43](end_span)</h3>
+          <p class="text-slate-400 text-sm">CBSE Board[span_44](start_span)[span_44](end_span)</p>
         </div>
-        <span class="text-slate-400 text-sm mt-2 sm:mt-0 font-mono">2020</span>
+        <span class="font-mono-code text-xs px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 w-fit">2020[span_45](start_span)[span_45](end_span)</span>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6 max-w-5xl mx-auto border-t border-slate-800 text-center">
-    <h2 class="text-3xl font-bold mb-3">Let's Connect</h2>
-    <p class="text-slate-400 max-w-md mx-auto mb-8 text-sm">
-      Feel free to reach out directly via email, phone, or LinkedIn.
+  <section id="contact" class="py-24 px-6 max-w-6xl mx-auto text-center relative" data-aos="fade-up">
+    <span class="text-xs font-mono-code text-cyan-400 uppercase tracking-widest">05 // Direct Contact</span>
+    <h2 class="text-4xl font-extrabold text-white mt-2 mb-4">Let's Connect</h2>
+    <p class="text-slate-400 max-w-md mx-auto mb-10 text-sm sm:text-base">
+      Open for entry-level Technical Support Engineer and Security Analyst roles[span_46](start_span)[span_46](end_span).
     </p>
 
     <div class="flex flex-wrap justify-center gap-4 max-w-md mx-auto">
-      <a href="mailto:ry736862@gmail.com" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/50 px-4 py-3 rounded-xl transition text-slate-200 text-sm">
-        <i class="fa-regular fa-envelope text-cyan-400"></i> ry736862@gmail.com
+      <a href="mailto:ry736862@gmail.com" class="glass-card px-5 py-3.5 rounded-xl hover:text-cyan-400 transition flex items-center gap-3 text-sm text-slate-200">
+        <i class="fa-regular fa-envelope text-cyan-400 text-base"></i>
+        <span>ry736862@gmail.com</span>[span_47](start_span)[span_47](end_span)
       </a>
-      <a href="tel:8299321547" class="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/50 px-4 py-3 rounded-xl transition text-slate-200 text-sm">
-        <i class="fa-solid fa-phone text-cyan-400"></i> +91 8299321547
+      <a href="tel:8299321547" class="glass-card px-5 py-3.5 rounded-xl hover:text-cyan-400 transition flex items-center gap-3 text-sm text-slate-200">
+        <i class="fa-solid fa-phone text-cyan-400 text-base"></i>
+        <span>+91 8299321547</span>[span_48](start_span)[span_48](end_span)
       </a>
     </div>
 
-    <div class="flex justify-center gap-6 mt-8 text-xl text-slate-400">
+    <div class="flex justify-center gap-6 mt-10 text-2xl text-slate-400">
       <a href="https://www.linkedin.com/in/ravi-yadav-0481552b7" target="_blank" class="hover:text-cyan-400 transition" title="LinkedIn">
         <i class="fa-brands fa-linkedin"></i>
       </a>
@@ -206,9 +355,18 @@
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-600">
-    <p>&copy; 2026 Ravi Yadav. All rights reserved.</p>
+  <footer class="border-t border-slate-900 py-8 text-center text-xs text-slate-600 font-mono-code">
+    <p>&copy; 2026 RAVI YADAV. ALL RIGHTS RESERVED.</p>
   </footer>
 
+  <!-- AOS Script Init -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-out-cubic',
+    });
+  </script>
 </body>
 </html>
